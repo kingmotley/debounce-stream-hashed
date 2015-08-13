@@ -1,6 +1,6 @@
 {
   "name": "gulp-debounce",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Debounces gulp streams with optional hash",
   "main": "index.js",
   "scripts": {
