@@ -18,7 +18,11 @@
   },
   "author": "Robert McKee <robertjunk@mckee.org>",
   "license": "MIT",
-  "dependencies": {,
+  "dependencies": {
+    "duplexer": "^0.1.1",
+    "gulp-util": "^3.0.6",
+    "through": "^2.3.8"
+  },
   "engine": "node >= 0.10",
   "readmeFilename": "README.md"
 }

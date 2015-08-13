@@ -1,30 +1,29 @@
-# gulp-debounce [![NPM version][npm-image]][npm-url][![Dependency Status][depstat-image]][depstat-url]
+# gulp-debounce-stream [![NPM version][npm-image]][npm-url][![Dependency Status][depstat-image]][depstat-url]
 
 Debounces a stream per hash.
 
 ## Installation
 
-Run `npm install --save gulp-debounce`.
+Run `npm install --save gulp-debounce-stream`.
 
 ## Usage
 
 ```js
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    debounce = require('gulp-debounce');
+    debounceStream = require('gulp-debounce-stream');
 
-
-gulp.task('stream', function () {
+gulp.task('stream2', function () {
     return gulp.src('css/**/*.css')
         .pipe(watch('css/**/*.css'))
-        .pipe(debounce())
+        .pipe(debounceStream())
         .pipe(gulp.dest('build'));
 });
 ```
 
 ## API
 
-### gulp-debounce([options][,callback])
+### gulp-debounce-stream([options][,callback])
 
 Debounces the stream using a hash function.  Useful if one or more files commonly have multiple file events in rapid succession before becoming idle.
 
@@ -35,30 +34,42 @@ This function is called when stream objects are emitted.
 
 #### Options
 
-##### options.hash
-Type: `Function`
-Default: `function(vinyl){vinyl.path;}`
+#### options.fnHash
+Type: `Function`  
+Default: `function(vinyl){ return vinyl.path; }`
 
-Pass in the function that generates the hash determine how to group the incoming events.
+Pass in the function that generates a hash string that will determine how to group the incoming events.
 
-##### options.timeout
+#### options.timeout
 Type: `Number`  
 Default: `1000`
 
 The number of milliseconds to debounce.
 
-##### options.immediate
+#### options.immediate
 Type: `Boolean`  
 Default: `false`
 
 This option when set will issue a callback on the first event.
 
+#### options.verbose
+Type: `Boolean`  
+Default: `false`
+
+This option will make the output more verbose.
+
+#### options.name
+Type: `String`  
+Default: `null`
+
+This option will prefix the output with this string so it is more easily identifable.
+
 ## License
 
 MIT (c) 2015 Robert McKee (robertjunk@mckee.org)
 
-[npm-url]: https://npmjs.org/package/gulp-debounce
-[npm-image]: http://img.shields.io/npm/v/gulp-debounce.svg?style=flat
+[npm-url]: https://npmjs.org/package/gulp-debounce-stream
+[npm-image]: http://img.shields.io/npm/v/gulp-debounce-stream.svg?style=flat
 
-[depstat-url]: https://david-dm.org/kingmotley/gulp-debounce
-[depstat-image]: http://img.shields.io/david/kingmotley/gulp-debounce.svg?style=flat
+[depstat-url]: https://david-dm.org/kingmotley/gulp-debounce-stream
+[depstat-image]: http://img.shields.io/david/kingmotley/gulp-debounce-stream.svg?style=flat
