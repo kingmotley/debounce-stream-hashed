@@ -1,20 +1,20 @@
 {
-  "name": "debounce-stream-hashed",
+  "name": "gulp-debounce",
   "version": "0.5.0",
-  "description": "A gulp watcher with debouncing",
+  "description": "Debounces gulp streams with optional hash",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "gulp",
-    "watch",
+    "stream",
     "debounce",
     "gulpplugin"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/kingmotley/debounce-stream-hashed"
+    "url": "git://github.com/kingmotley/gulp-debounce"
   },
   "author": "Robert McKee <robertjunk@mckee.org>",
   "license": "MIT",

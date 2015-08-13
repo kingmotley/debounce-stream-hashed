@@ -1,17 +1,17 @@
-# debounce-stream-hashed [![NPM version][npm-image]][npm-url][![Dependency Status][depstat-image]][depstat-url]
+# gulp-debounce [![NPM version][npm-image]][npm-url][![Dependency Status][depstat-image]][depstat-url]
 
 Debounces a stream per hash.
 
 ## Installation
 
-Run `npm install --save gulp-debounced-watch`.
+Run `npm install --save gulp-debounce`.
 
 ## Usage
 
 ```js
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    debounce = require('debounce-stream-hashed');
+    debounce = require('gulp-debounce');
 
 
 gulp.task('stream', function () {
@@ -24,30 +24,26 @@ gulp.task('stream', function () {
 
 ## API
 
-### debounce-stream-hashed([fnHash][,options][,callback])
+### gulp-debounce([options][,callback])
 
-Creates a watcher that will spy on files that are matched by `glob` which can be a
-glob string or array of glob strings.
+Debounces the stream using a hash function.  Useful if one or more files commonly have multiple file events in rapid succession before becoming idle.
 
-Returns a pass through stream that will emit vinyl files
-(with additional `event` property) that corresponds to event on file-system.
 
-#### fnHash
+#### Callback `function(object)`
+
+This function is called when stream objects are emitted.
+
+#### Options
+
+##### options.hash
 Type: `Function`
 Default: `function(vinyl){vinyl.path;}`
 
 Pass in the function that generates the hash determine how to group the incoming events.
 
-
-#### Callback `function(object)`
-
-This function is called when stream objects are released.
-
-#### Options
-
 ##### options.timeout
 Type: `Number`  
-Default: 1000
+Default: `1000`
 
 The number of milliseconds to debounce.
 
@@ -61,8 +57,8 @@ This option when set will issue a callback on the first event.
 
 MIT (c) 2015 Robert McKee (robertjunk@mckee.org)
 
-[npm-url]: https://npmjs.org/package/debounce-stream-hashed
-[npm-image]: http://img.shields.io/npm/v/debounce-stream-hashed.svg?style=flat
+[npm-url]: https://npmjs.org/package/gulp-debounce
+[npm-image]: http://img.shields.io/npm/v/gulp-debounce.svg?style=flat
 
-[depstat-url]: https://david-dm.org/kingmotley/debounce-stream-hashed
-[depstat-image]: http://img.shields.io/david/kingmotley/debounce-stream-hashed.svg?style=flat
+[depstat-url]: https://david-dm.org/kingmotley/gulp-debounce
+[depstat-image]: http://img.shields.io/david/kingmotley/gulp-debounce.svg?style=flat
