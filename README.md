@@ -46,11 +46,17 @@ Default: `1000`
 
 The number of milliseconds to debounce.
 
-#### options.immediate
+#### options.first
 Type: `Boolean`  
 Default: `false`
 
 This option when set will issue a callback on the first event.
+
+#### options.last
+Type: `Boolean`  
+Default: `true`
+
+This option when set will issue a callback on the last event.
 
 #### options.verbose
 Type: `Boolean`  
