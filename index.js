@@ -55,7 +55,7 @@ function debounceStream(opts,cb) {
         }
     }
     function flush() {
-        foreach(i in queue)
+        for (var i in queue)
         {
             output.queue(i.data);
         }
